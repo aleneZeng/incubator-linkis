@@ -58,10 +58,10 @@ class Knife4jConfig extends WebMvcConfigurer {
   def  defaultApi2() : Docket = {
      val docket = new Docket(DocumentationType.SWAGGER_2)
       .apiInfo(apiInfo())
-      //分组名称
+      //group name
       .groupName("RESTAPI")
       .select()
-      //这里指定Controller扫描包路径
+      //controller package location
       .apis(RequestHandlerSelectors.basePackage("org.apache.linkis"))
       .paths(PathSelectors.any())
       .build()
